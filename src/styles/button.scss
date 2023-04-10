@@ -1,0 +1,49 @@
+.button {
+    width: 200px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background-color: #ffc85e;
+    border-radius: 79px;
+    font-weight: 700;
+    transition: background-color 0.3s linear 0s;
+
+    span,
+    svg {
+        color: #ffffff;
+    }
+
+    svg {
+        font-size: 16px;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: #1fd85d;
+        }
+    }
+
+    &_small {
+        text-transform: uppercase;
+        width: 150px;
+        height: 50px;
+        font-size: 10px;
+
+        svg {
+            font-size: 18px;
+        }
+    }
+
+    &_green {
+        background-color: #1fd85d;
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: #023da9;
+            }
+        }
+    }
+}

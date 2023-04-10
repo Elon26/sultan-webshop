@@ -1,0 +1,144 @@
+@import "./common.scss";
+
+.adminPage {
+    &__backup {
+        width: 400px;
+        margin: 0px auto;
+        border: 3px solid #111111;
+        padding: 20px;
+        border-radius: 24px;
+        text-align: center;
+        margin-bottom: 10px;
+
+        @media (max-width: $md4) {
+            width: 280px;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        ul {
+            margin-bottom: 20px;
+        }
+
+        li {
+            font-size: 16px;
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    &__backupButton {
+        margin: 0px auto;
+    }
+
+    &__emptyMessage {
+        font-size: 24px;
+        text-align: center;
+        font-weight: 700;
+    }
+}
+
+.adminProductCard {
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    &:not(:last-child) {
+        border-bottom: 2px solid rgba(63, 78, 101, 0.3);
+    }
+
+    @media (max-width: $md1) {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    @media (max-width: $md3) {
+        gap: 10px;
+        padding: 10px 0;
+        justify-content: space-between;
+    }
+
+    &__img {
+        flex: 0 0 200px;
+        text-align: center;
+        img {
+            max-height: 175px;
+            object-fit: contain;
+        }
+
+        @media (max-width: $md3) {
+            flex: 1 1 100%;
+        }
+    }
+
+    &__infos {
+        flex: 1 1 auto;
+
+        @media (max-width: $md1) {
+            flex: 1 1 calc(100% - 240px);
+        }
+
+        @media (max-width: $md3) {
+            flex: 1 1 100%;
+        }
+    }
+
+    &__weight {
+        margin-bottom: 10px;
+    }
+
+    &__name {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 10px;
+
+        @media (max-width: $md3) {
+            font-size: 20px;
+        }
+    }
+
+    &__infoItem {
+        margin-bottom: 10px;
+        line-height: 1.2;
+
+        & span:first-child {
+            font-weight: 700;
+            margin-right: 5px;
+        }
+    }
+
+    &__description {
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 1.5;
+        text-align: justify;
+    }
+
+    &__price {
+        flex: 0 0 100px;
+        font-size: 24px;
+        font-weight: 700;
+        text-align: center;
+        white-space: nowrap;
+
+        @media (max-width: $md4) {
+            font-size: 16px;
+            flex: 1 1 auto;
+        }
+    }
+
+    &__removeButton {
+        flex: 0 0 59px;
+        cursor: pointer;
+    }
+}

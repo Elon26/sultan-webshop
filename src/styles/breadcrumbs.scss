@@ -1,0 +1,59 @@
+.breadcrumbs {
+    margin-bottom: 20px;
+    font-weight: 300;
+    color: #3f4e65;
+
+    &__link {
+        margin-right: 10px;
+        transition: color 0.15s linear 0s;
+
+        @media (hover: hover) {
+            &:hover {
+                color: #029a34;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__separator {
+        margin-right: 10px;
+        opacity: 0.6;
+    }
+
+    &__end {
+        opacity: 0.6;
+    }
+
+    &__goBack {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        cursor: pointer;
+
+        @media (hover: hover) {
+            &:hover {
+                & span {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &__goBackButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(255, 198, 80, 0.3);
+        cursor: pointer;
+    }
+
+    &__goBackText {
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}

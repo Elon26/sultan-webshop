@@ -1,0 +1,16 @@
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    &__button {
+        background-color: rgba(255, 198, 80, 0.3);
+        border-radius: 12px;
+        width: 35px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+}

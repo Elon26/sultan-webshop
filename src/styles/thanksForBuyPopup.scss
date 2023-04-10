@@ -1,0 +1,95 @@
+@import "./common.scss";
+
+.thanksForBuyPopup {
+    position: fixed;
+    z-index: 51;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(17, 17, 17, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease 0s, visibility 0.5s ease 0s;
+
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__body {
+        margin: 0 20px;
+        padding: 0 20px;
+        height: 424px;
+        width: 735px;
+        border-radius: 8px;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        @media (max-width: $md3) {
+            height: 288px;
+            width: 100%;
+        }
+    }
+
+    &__icon {
+        width: 59px;
+        height: 59px;
+        background-color: #ffc85e;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: #ffffff;
+        margin-bottom: 25px;
+
+        &_closeIcon {
+            cursor: pointer;
+            background-color: rgba(17, 17, 17, 0.5);
+            color: #ffc85e;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+
+            @media (hover: hover) {
+                &:hover {
+                    background-color: #ffc85e;
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+
+    &__bigText {
+        font-size: 40px;
+        font-weight: 500;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        text-align: center;
+
+        @media (max-width: $md3) {
+            font-size: 20px;
+        }
+    }
+
+    &__smallText {
+        font-size: 20px;
+        font-weight: 300;
+        color: #3f4e65;
+        text-align: center;
+        line-height: 1.2;
+
+        @media (max-width: $md3) {
+            font-size: 12px;
+        }
+    }
+}

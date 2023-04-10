@@ -1,0 +1,239 @@
+@import "./common.scss";
+
+.changeOrCreateProductPopup {
+    position: fixed;
+    z-index: 51;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(17, 17, 17, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease 0s, visibility 0.5s ease 0s;
+
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__body {
+        margin: 20px;
+        padding: 20px;
+        height: calc(100vh - 40px);
+        width: 735px;
+        border-radius: 8px;
+        background-color: #ffffff;
+        overflow: hidden;
+        position: relative;
+        overflow: auto;
+    }
+
+    &__closeIcon {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        width: 59px;
+        height: 59px;
+        background-color: rgba(17, 17, 17, 0.5);
+        color: #ffc85e;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        margin-bottom: 25px;
+        cursor: pointer;
+        transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: #ffc85e;
+                color: #ffffff;
+            }
+        }
+
+        @media (max-width: $md3) {
+            width: 35px;
+            height: 35px;
+        }
+    }
+
+    &__title {
+        font-size: 24px;
+        font-weight: 700;
+        margin: 20px 0 40px 0;
+
+        @media (max-width: $md3) {
+            margin: 20px 0;
+        }
+    }
+
+    &__form {
+        width: 100%;
+    }
+
+    &__inputItem {
+        margin-bottom: 20px;
+        @media (max-width: $md3) {
+            margin-bottom: 10px;
+        }
+
+        &_dimensionTypeDropdown,
+        &_purposesDropdown {
+            position: relative;
+            cursor: pointer;
+        }
+
+        label {
+            display: inline-block;
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            @media (max-width: $md3) {
+                font-size: 16px;
+            }
+        }
+
+        input {
+            background-color: #ededed;
+            width: 100%;
+            height: 60px;
+            border-radius: 36px;
+            padding: 0 20px;
+            border: 2px solid #adadad;
+            transition: border-color 0.3s ease 0s;
+
+            &:focus {
+                border: 2px solid #7e7e6f;
+            }
+
+            &.error {
+                border: 2px solid #9c0000;
+            }
+
+            @media (max-width: $md3) {
+                height: 50px;
+                font-size: 14px;
+            }
+        }
+
+        span {
+            display: inline-block;
+            margin-top: 10px;
+            color: #9c0000;
+            font-weight: 700;
+        }
+    }
+
+    &__textareaOuter {
+        background-color: #ededed;
+        height: 100px;
+        border-radius: 36px;
+        padding: 10px 10px 10px 20px;
+        border: 2px solid #adadad;
+        line-height: 1.5;
+        transition: border-color 0.3s ease 0s;
+
+        &.error {
+            border: 2px solid #9c0000;
+        }
+
+        textarea {
+            background-color: #ededed;
+            width: 100%;
+            height: 100%;
+            resize: none;
+            text-align: justify;
+            padding-right: 10px;
+        }
+
+        @media (max-width: $md3) {
+            height: 80px;
+            font-size: 14px;
+        }
+    }
+
+    &__currentValue {
+        background-color: #ededed;
+        width: 100%;
+        height: 60px;
+        border-radius: 36px;
+        padding: 0 20px;
+        border: 2px solid #adadad;
+        display: flex;
+        align-items: center;
+
+        &.error {
+            border: 2px solid #9c0000;
+        }
+
+        @media (max-width: $md3) {
+            height: 50px;
+            font-size: 14px;
+        }
+    }
+
+    &__formButton {
+        margin: 0px auto;
+        color: #ffffff;
+    }
+
+    &__dropdown {
+        position: absolute;
+        z-index: 2;
+        top: 100%;
+        left: 0;
+        background-color: #ededed;
+        min-width: 100px;
+        border-radius: 36px;
+        padding: 0 20px;
+        border: 2px solid #adadad;
+        text-align: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease 0s, visibility 0.5s ease 0s;
+
+        &.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &__dropdownItem {
+        padding: 10px 0;
+
+        @media (hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__dimensionTypeItem {
+        padding: 10px 0;
+
+        @media (hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__purposesItem {
+        padding: 10px 0;
+
+        &.selected {
+            font-weight: 900;
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

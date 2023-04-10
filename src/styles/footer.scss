@@ -1,0 +1,225 @@
+@import "./common.scss";
+
+.footer {
+    background-color: #3f4e65;
+
+    &__container {
+        @media (max-width: $md2) {
+            max-width: 600px;
+        }
+    }
+
+    &__body {
+        padding: 70px 0 115px 0;
+        color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        gap: 60px;
+
+        @media (max-width: $md1) {
+            gap: 10px;
+        }
+
+        @media (max-width: $md2) {
+            flex-direction: column;
+            padding: 20px 0;
+            gap: 20px;
+        }
+    }
+
+    &__col {
+        &_small {
+            flex: 1 1 25%;
+        }
+
+        &_middle {
+            flex: 1 1 35%;
+        }
+
+        &_big {
+            flex: 1 1 40%;
+        }
+
+        &_withSubCols {
+            display: flex;
+            justify-content: space-around;
+            gap: 10px;
+
+            @media (max-width: $md2) {
+                justify-content: space-between;
+            }
+        }
+    }
+
+    &__subCol {
+        @media (max-width: $md2) {
+            flex: 1 1 50%;
+            &:last-child {
+                text-align: right;
+            }
+        }
+    }
+
+    &__logo {
+        margin-bottom: 10px;
+
+        @media (max-width: $md2) {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__aboutCompany {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 45px;
+
+        @media (max-width: $md2) {
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: $md4) {
+            font-size: 12px;
+        }
+    }
+
+    &__signUp {
+        p {
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 25px;
+
+        &_invisible {
+            opacity: 0;
+        }
+
+        @media (max-width: $md4) {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__menuLink {
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        transition: color 0.15s linear 0s;
+        @media (hover: hover) {
+            &:hover {
+                color: #029a34;
+                text-decoration: underline;
+            }
+        }
+
+        @media (max-width: $md4) {
+            font-size: 11px;
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    &__button {
+        margin-bottom: 20px;
+
+        @media (max-width: $md2) {
+            margin-bottom: 0;
+            height: 40px !important;
+            width: 200px !important;
+        }
+
+        @media (max-width: $md4) {
+            width: 150px !important;
+        }
+    }
+
+    &__messangers {
+        p {
+            margin-bottom: 15px;
+        }
+        a:not(:last-child) {
+            margin-right: 10px;
+        }
+    }
+
+    &__contactField {
+        margin-bottom: 25px;
+
+        & p:nth-child(1) {
+            font-weight: 600;
+            margin-bottom: 5px;
+            @media (hover: hover) {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            @media (max-width: $md4) {
+                font-size: 12px;
+            }
+        }
+        & p:nth-child(2) {
+            font-weight: 300;
+            font-size: 12px;
+            margin-bottom: 5px;
+
+            @media (max-width: $md4) {
+                font-size: 10px;
+            }
+        }
+        & p:nth-child(3) {
+            font-size: 10px;
+            text-decoration: underline;
+
+            & span {
+                cursor: pointer;
+                transition: color 0.15s linear 0s;
+                @media (hover: hover) {
+                    &:hover {
+                        color: #ffc85e;
+                    }
+                }
+            }
+        }
+    }
+
+    &__mailField {
+        margin-bottom: 25px;
+        @media (max-width: $md2) {
+            margin-bottom: 10px;
+        }
+
+        p:first-child {
+            margin-bottom: 5px;
+            font-weight: 600;
+
+            @media (hover: hover) {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        p:last-child {
+            font-size: 12px;
+            font-weight: 300;
+
+            @media (max-width: $md4) {
+                font-size: 10px;
+            }
+        }
+    }
+
+    &__bankCardField {
+        display: flex;
+        gap: 5px;
+    }
+}

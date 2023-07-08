@@ -7,7 +7,7 @@ import { getLoadingStatus, loadCatalogList } from "./catalog";
 import { AxiosError } from "axios";
 import catchError from "../utils/catchError";
 
-/** Higher-Order Component, предназначенный для единоразовой загрузки базы данных и сохраннённой корзины, с целью её последующего использования в разных частях приложения, без необходимости повторной загрузки. */
+/** Higher-Order Component, предназначенный для первоначальной загрузки базы данных и сохраннённой корзины, с целью её последующего использования в разных частях приложения, без необходимости повторной загрузки. */
 const AppLoader = ({
     children
 }: {

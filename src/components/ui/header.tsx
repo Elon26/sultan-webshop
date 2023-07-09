@@ -13,13 +13,11 @@ import {
     callbackRequestedMessage,
     formDisabledMessage,
     HOMEPAGE,
-    linkDisabledMessage,
     menu,
     priceListDisabledMessage
 } from "../../constats";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import "../../styles/header.scss";
-import handleMenuLinkClick from "../../utils/handleMenuLinkClick";
 import showUserMessage from "../../utils/showUserMessage";
 import LinkButton from "../common/linkButton";
 import SingleFieldForm from "../common/singleFieldForm";
@@ -95,18 +93,16 @@ const Header = (): React.ReactElement => {
                                 <nav className="topHeader__rightSide">
                                     <ul
                                         className="topHeader__menu"
-                                        onClick={handleMenuLinkClick}
                                     >
                                         {menu.map((menuItem) => (
                                             <li
-                                                key={"header" + menuItem}
+                                                key={"headerFat" + menuItem.title}
                                                 className="topHeader__menuLink menuLink"
                                             >
                                                 <Link
-                                                    to="#"
-                                                    title={linkDisabledMessage}
+                                                    to={`${HOMEPAGE}${menuItem.link}`}
                                                 >
-                                                    {menuItem}
+                                                    {menuItem.title}
                                                 </Link>
                                             </li>
                                         ))}
@@ -410,19 +406,16 @@ const Header = (): React.ReactElement => {
                                         Меню сайта:
                                     </div>
                                     <nav className="dropdownMenu__menu">
-                                        <ul onClick={handleMenuLinkClick}>
+                                        <ul>
                                             {menu.map((menuItem) => (
                                                 <li
-                                                    key={"dropdown" + menuItem}
+                                                    key={"dropdown" + menuItem.title}
                                                     className="dropdownMenu__menuLink menuLink"
                                                 >
                                                     <Link
-                                                        to="#"
-                                                        title={
-                                                            linkDisabledMessage
-                                                        }
+                                                        to={`${HOMEPAGE}${menuItem.link}`}
                                                     >
-                                                        {menuItem}
+                                                        {menuItem.title}
                                                     </Link>
                                                 </li>
                                             ))}

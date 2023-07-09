@@ -11,7 +11,6 @@ import {
 } from "../../constats";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import "../../styles/footer.scss";
-import handleMenuLinkClick from "../../utils/handleMenuLinkClick";
 import showUserMessage from "../../utils/showUserMessage";
 import LinkButton from "../common/linkButton";
 import SingleFieldForm from "../common/singleFieldForm";
@@ -23,7 +22,7 @@ const Footer = (): React.ReactElement => {
     return (
         <footer className="footer">
             <div className="footer__container container">
-                <div className="footer__body" onClick={handleMenuLinkClick}>
+                <div className="footer__body">
                     <div className="footer__col footer__col_small">
                         <div className="footer__logo">
                             {windowWidth > 991.98 && (
@@ -180,11 +179,13 @@ const Footer = (): React.ReactElement => {
                             <div className="footer__title">Меню сайта:</div>
                             {menu.map((menuItem) => (
                                 <div
-                                    key={"footer " + menuItem}
+                                    key={"footer " + menuItem.title}
                                     className="footer__menuLink menuLink"
                                 >
-                                    <Link to="#" title={linkDisabledMessage}>
-                                        <span>{menuItem}</span>
+                                    <Link
+                                        to={`${HOMEPAGE}${menuItem.link}`}
+                                    >
+                                        <span>{menuItem.title}</span>
                                     </Link>
                                 </div>
                             ))}

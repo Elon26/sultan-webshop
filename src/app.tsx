@@ -14,6 +14,9 @@ import { HOMEPAGE } from "./constats";
 import ClickCatcherProvider from "./hooks/useClickCatcher";
 import WindowDimensionsProvider from "./hooks/useWindowDimensions";
 import AppLoader from "./store/appLoader";
+import AboutPage from "./components/pages/aboutPage";
+import DeliveryPage from "./components/pages/deliveryPage";
+import RefundPage from "./components/pages/refundPage";
 
 /** Основной компонент приложения. */
 function App(): React.ReactElement {
@@ -34,6 +37,18 @@ function App(): React.ReactElement {
                                     <Route
                                         path={HOMEPAGE + "cart/"}
                                         component={CartPage}
+                                    />
+                                    <Route
+                                        path={HOMEPAGE + "about/"}
+                                        component={AboutPage}
+                                    />
+                                    <Route
+                                        path={HOMEPAGE + "delivery/"}
+                                        component={DeliveryPage}
+                                    />
+                                    <Route
+                                        path={HOMEPAGE + "refund/"}
+                                        component={RefundPage}
                                     />
                                     <Route
                                         path={HOMEPAGE + "admin/"}

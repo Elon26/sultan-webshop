@@ -3,7 +3,16 @@ export const SERVER_URL =
 export const HOMEPAGE = "/sultan-webshop/";
 export const LOCALSTORAGE_CART_NAME = "sultanUserCartByElon";
 
-export const menu = ["О компании", "Доставка и оплата", "Возврат", "Контакты"];
+export const menu = [{
+    title: "О компании",
+    link: "about"
+}, {
+    title: "Доставка и оплата",
+    link: "delivery"
+}, {
+    title: "Возврат",
+    link: "refund"
+}];
 export const productFieldOrderToShow = [
     "name",
     "purposes",

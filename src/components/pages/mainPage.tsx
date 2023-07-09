@@ -1,8 +1,8 @@
 import React from "react";
-import { BsGrid, BsPersonLinesFill } from "react-icons/bs";
-import { HOMEPAGE } from "../../constats";
-import LinkButton from "../common/linkButton";
 import "../../styles/mainPage.scss";
+import MainSlider from "../ui/mainSlider";
+import feedback from "../../mockData/feedback.json";
+import FeedbackItem from "../common/feedbackItem";
 
 /** Компонент главной страницы. */
 const MainPage = (): React.ReactElement => {
@@ -10,20 +10,22 @@ const MainPage = (): React.ReactElement => {
         <section className="mainPage" data-testid="mainPageOuter">
             <div className="container">
                 <h1 className="pageTitle">Главная страница</h1>
-                <div className="mainPage__buttons">
-                    <LinkButton
-                        link={HOMEPAGE + "catalog/"}
-                        classEl="mainPage__button"
-                        text="Каталог"
-                        icon={<BsGrid />}
-                    />
-                    <LinkButton
-                        link={HOMEPAGE + "admin/"}
-                        classEl="mainPage__button"
-                        text="Админ-панель"
-                        icon={<BsPersonLinesFill />}
-                        testid="adminPageRouterLink"
-                    />
+                <MainSlider />
+                <div className="mainPage__feedback feedback">
+                    <div className="feedback__title">Отзывы</div>
+                    <div className="feedback__body">
+                        {feedback.map(item => (
+                            <FeedbackItem
+                                key={item.name + Date.now().toString()}
+                                name={item.name}
+                                date={item.date}
+                                rate={item.rate}
+                                advantages={item.advantages}
+                                disadvantages={item.disadvantages}
+                                comment={item.comment}
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

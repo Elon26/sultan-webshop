@@ -1,13 +1,54 @@
 @import "./common.scss";
 
-.mainPage {
-    &__buttons {
-        display: flex;
-        gap: 20px;
+.feedback {
+    &__title {
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+    }
 
-        @media (max-width: $md4) {
-            flex-direction: column;
-            align-items: center;
-        }
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px 0;
+    }
+}
+
+.feedbackItem {
+    flex: 1 1 calc(20% - 20px);
+    font-size: 16px;
+    border: 4px solid #000000;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
+    background-color: #bffffd;
+    border-radius: 12px;
+    height: 300px;
+    overflow: hidden;
+
+    &__wrapper {
+        overflow-y: scroll;
+        height: 100%;
+        padding: 10px;
+    }
+
+    &__name {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    &__date {
+        color: #6c6c6c;
+        margin-bottom: 10px;
+    }
+
+    &__rate {
+        margin-bottom: 10px;
+    }
+
+    &__textItem {
+        line-height: 1.2;
+        margin-bottom: 10px;
     }
 }

@@ -133,7 +133,7 @@ const ProductPage = ({
                                             области
                                         </div>
                                         <LinkButton
-                                            link={"#"}
+                                            link={"https://firebasestorage.googleapis.com/v0/b/sultan-68796.appspot.com/o/price.pdf?alt=media&token=2013913b-dffd-4942-9687-ceff91cb1d3c"}
                                             classEl="product__priceLink"
                                             text="Прайс-лист"
                                             icon={<BsDownload />}
@@ -144,6 +144,7 @@ const ProductPage = ({
                                                     priceListDisabledMessage
                                                 )
                                             }
+                                            absolute={true}
                                         />
                                     </div>
                                 </>
@@ -194,7 +195,7 @@ const ProductPage = ({
                                         доставка по Кокчетаву и области
                                     </div>
                                     <LinkButton
-                                        link={"#"}
+                                        link={"https://firebasestorage.googleapis.com/v0/b/sultan-68796.appspot.com/o/price.pdf?alt=media&token=2013913b-dffd-4942-9687-ceff91cb1d3c"}
                                         classEl="product__priceLink"
                                         text="Прайс-лист"
                                         icon={<BsDownload />}
@@ -205,6 +206,7 @@ const ProductPage = ({
                                                 priceListDisabledMessage
                                             )
                                         }
+                                        absolute={true}
                                     />
                                 </>
                             )}

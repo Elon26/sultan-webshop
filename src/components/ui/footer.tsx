@@ -1,11 +1,9 @@
 import React from "react";
-import { BsChevronRight, BsDownload } from "react-icons/bs";
+import { BsDownload } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import {
     callbackRequestedMessage,
-    categories,
     HOMEPAGE,
-    linkDisabledMessage,
     menu,
     priceListDisabledMessage
 } from "../../constats";
@@ -13,7 +11,6 @@ import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import "../../styles/footer.scss";
 import showUserMessage from "../../utils/showUserMessage";
 import LinkButton from "../common/linkButton";
-import SingleFieldForm from "../common/singleFieldForm";
 
 /** Компонент подвала, отображаемого на каждой странице. */
 const Footer = (): React.ReactElement => {
@@ -144,7 +141,7 @@ const Footer = (): React.ReactElement => {
                                         </svg>
                                     </Link>
                                     <LinkButton
-                                        link={"#"}
+                                        link={"https://firebasestorage.googleapis.com/v0/b/sultan-68796.appspot.com/o/price.pdf?alt=media&token=2013913b-dffd-4942-9687-ceff91cb1d3c"}
                                         classEl="footer__button"
                                         text="Прайс-лист"
                                         icon={<BsDownload />}
@@ -155,6 +152,7 @@ const Footer = (): React.ReactElement => {
                                                 priceListDisabledMessage
                                             )
                                         }
+                                        absolute={true}
                                     />
                                 </>
                             )}
@@ -163,15 +161,6 @@ const Footer = (): React.ReactElement => {
                             Компания «Султан» — снабжаем розничные магазины
                             товарами "под ключ" в Кокчетаве и Акмолинской
                             области.
-                        </div>
-                        <div className="footer__signUp">
-                            <p>Подпишись на скидки и акции</p>
-                            <SingleFieldForm
-                                classEl="footer__signUpForm"
-                                placeholder="Введите ваш Email"
-                                icon={<BsChevronRight />}
-                                broken={true}
-                            />
                         </div>
                     </div>
                     <div className="footer__col footer__col_middle footer__col_withSubCols">
@@ -191,17 +180,16 @@ const Footer = (): React.ReactElement => {
                             ))}
                         </div>
                         <div className="footer__subCol">
-                            <div className="footer__title">Категории:</div>
-                            {categories.map((category) => (
-                                <div
-                                    key={"footter" + category}
-                                    className="footer__menuLink menuLink"
+                            <div className="footer__title">Персональные данные:</div>
+                            <div
+                                className="footer__menuLink menuLink"
+                            >
+                                <Link
+                                    to={`${HOMEPAGE}policy`}
                                 >
-                                    <Link to="#" title={linkDisabledMessage}>
-                                        <span>{category}</span>
-                                    </Link>
-                                </div>
-                            ))}
+                                    <span>Политика обработки и использования</span>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                     <div className="footer__col footer__col_big footer__col_withSubCols footer__col_reversive">
@@ -212,7 +200,7 @@ const Footer = (): React.ReactElement => {
                                         Скачать прайс-лист:
                                     </div>
                                     <LinkButton
-                                        link={"#"}
+                                        link={"https://firebasestorage.googleapis.com/v0/b/sultan-68796.appspot.com/o/price.pdf?alt=media&token=2013913b-dffd-4942-9687-ceff91cb1d3c"}
                                         classEl="footer__button"
                                         text="Прайс-лист"
                                         icon={<BsDownload />}
@@ -223,13 +211,13 @@ const Footer = (): React.ReactElement => {
                                                 priceListDisabledMessage
                                             )
                                         }
+                                        absolute={true}
                                     />
                                     <div className="footer__messangers">
                                         <p>Связь в мессенджерах:</p>
                                         <Link
                                             className="menuLink"
                                             to="#"
-                                            title={linkDisabledMessage}
                                         >
                                             <img
                                                 src="https://firebasestorage.googleapis.com/v0/b/sultan-68796.appspot.com/o/footer%2FwhatsApp.png?alt=media&token=a4784c7b-4dd5-4f87-a546-74c6f062de25"
@@ -239,7 +227,6 @@ const Footer = (): React.ReactElement => {
                                         <Link
                                             className="menuLink"
                                             to="#"
-                                            title={linkDisabledMessage}
                                         >
                                             <img
                                                 src="https://firebasestorage.googleapis.com/v0/b/sultan-68796.appspot.com/o/footer%2Ftelegram.png?alt=media&token=ee155420-fe49-4ea2-9edb-e2f0762d6089"
@@ -284,7 +271,6 @@ const Footer = (): React.ReactElement => {
                                         <Link
                                             className="menuLink"
                                             to="#"
-                                            title={linkDisabledMessage}
                                         >
                                             <img
                                                 src="https://firebasestorage.googleapis.com/v0/b/sultan-68796.appspot.com/o/footer%2Fvisa.png?alt=media&token=79aea328-8c3b-4934-8bdd-7db0e155c97c"
@@ -294,7 +280,6 @@ const Footer = (): React.ReactElement => {
                                         <Link
                                             className="menuLink"
                                             to="#"
-                                            title={linkDisabledMessage}
                                         >
                                             <img
                                                 src="https://firebasestorage.googleapis.com/v0/b/sultan-68796.appspot.com/o/footer%2FmasterCard.png?alt=media&token=6dcea9b9-c2db-42f1-b28c-ddd001ef3736"
@@ -341,7 +326,6 @@ const Footer = (): React.ReactElement => {
                                         <Link
                                             className="menuLink"
                                             to="#"
-                                            title={linkDisabledMessage}
                                         >
                                             <img
                                                 src="https://firebasestorage.googleapis.com/v0/b/sultan-68796.appspot.com/o/footer%2Fvisa.png?alt=media&token=79aea328-8c3b-4934-8bdd-7db0e155c97c"
@@ -351,7 +335,6 @@ const Footer = (): React.ReactElement => {
                                         <Link
                                             className="menuLink"
                                             to="#"
-                                            title={linkDisabledMessage}
                                         >
                                             <img
                                                 src="https://firebasestorage.googleapis.com/v0/b/sultan-68796.appspot.com/o/footer%2FmasterCard.png?alt=media&token=6dcea9b9-c2db-42f1-b28c-ddd001ef3736"
@@ -369,7 +352,6 @@ const Footer = (): React.ReactElement => {
                                         <Link
                                             className="menuLink"
                                             to="#"
-                                            title={linkDisabledMessage}
                                         >
                                             <img
                                                 src="https://firebasestorage.googleapis.com/v0/b/sultan-68796.appspot.com/o/footer%2FwhatsApp.png?alt=media&token=a4784c7b-4dd5-4f87-a546-74c6f062de25"
@@ -379,7 +361,6 @@ const Footer = (): React.ReactElement => {
                                         <Link
                                             className="menuLink"
                                             to="#"
-                                            title={linkDisabledMessage}
                                         >
                                             <img
                                                 src="https://firebasestorage.googleapis.com/v0/b/sultan-68796.appspot.com/o/footer%2Ftelegram.png?alt=media&token=ee155420-fe49-4ea2-9edb-e2f0762d6089"

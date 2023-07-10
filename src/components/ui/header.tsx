@@ -20,7 +20,6 @@ import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import "../../styles/header.scss";
 import showUserMessage from "../../utils/showUserMessage";
 import LinkButton from "../common/linkButton";
-import SingleFieldForm from "../common/singleFieldForm";
 import CartHeader from "./cartHeader";
 
 /** Компонент шапки, отображаемой на каждой странице. */
@@ -182,12 +181,6 @@ const Header = (): React.ReactElement => {
                                     icon={<BsGrid />}
                                 />
                                 <div className="bottomHeader__item bottomHeader__search">
-                                    <SingleFieldForm
-                                        classEl="bottomHeader__searchForm"
-                                        placeholder="Поиск..."
-                                        icon={<BsSearch />}
-                                        broken={true}
-                                    />
                                 </div>
                                 <div
                                     className="bottomHeader__item bottomHeader__call"
@@ -221,7 +214,7 @@ const Header = (): React.ReactElement => {
                                     </div>
                                 </div>
                                 <LinkButton
-                                    link={"#"}
+                                    link={"https://firebasestorage.googleapis.com/v0/b/sultan-68796.appspot.com/o/price.pdf?alt=media&token=2013913b-dffd-4942-9687-ceff91cb1d3c"}
                                     classEl="bottomHeader__item"
                                     text="Прайс-лист"
                                     icon={<BsDownload />}
@@ -232,6 +225,7 @@ const Header = (): React.ReactElement => {
                                             priceListDisabledMessage
                                         )
                                     }
+                                    absolute={true}
                                 />
                                 <CartHeader windowWidth={windowWidth} />
                             </div>
@@ -325,23 +319,6 @@ const Header = (): React.ReactElement => {
                                         <span>Каталог</span>
                                     </Link>
                                 </div>
-                                <div
-                                    className="bottomHeader__item"
-                                    onClick={() =>
-                                        showUserMessage(
-                                            "error",
-                                            formDisabledMessage
-                                        )
-                                    }
-                                >
-                                    <Link
-                                        to={"#"}
-                                        className="bottomHeader__smallWindowItem"
-                                    >
-                                        <BsSearch />
-                                        <span>Поиск</span>
-                                    </Link>
-                                </div>
                             </div>
                         </article>
                         <aside className="dropdownMenu">
@@ -422,7 +399,7 @@ const Header = (): React.ReactElement => {
                                         </ul>
                                     </nav>
                                     <LinkButton
-                                        link={"#"}
+                                        link={"https://firebasestorage.googleapis.com/v0/b/sultan-68796.appspot.com/o/price.pdf?alt=media&token=2013913b-dffd-4942-9687-ceff91cb1d3c"}
                                         classEl="dropdownMenu__price"
                                         text="Прайс-лист"
                                         icon={<BsDownload />}
@@ -433,6 +410,7 @@ const Header = (): React.ReactElement => {
                                                 priceListDisabledMessage
                                             )
                                         }
+                                        absolute={true}
                                     />
                                 </div>
                             </div>

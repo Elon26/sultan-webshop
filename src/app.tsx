@@ -17,6 +17,7 @@ import AppLoader from "./store/appLoader";
 import AboutPage from "./components/pages/aboutPage";
 import DeliveryPage from "./components/pages/deliveryPage";
 import RefundPage from "./components/pages/refundPage";
+import PolicyPage from "./components/pages/policyPage";
 
 /** Основной компонент приложения. */
 function App(): React.ReactElement {
@@ -49,6 +50,10 @@ function App(): React.ReactElement {
                                     <Route
                                         path={HOMEPAGE + "refund/"}
                                         component={RefundPage}
+                                    />
+                                    <Route
+                                        path={HOMEPAGE + "policy/"}
+                                        component={PolicyPage}
                                     />
                                     <Route
                                         path={HOMEPAGE + "admin/"}

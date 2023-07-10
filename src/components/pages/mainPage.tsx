@@ -9,10 +9,8 @@ const MainPage = (): React.ReactElement => {
     return (
         <section className="mainPage" data-testid="mainPageOuter">
             <div className="container">
-                <h1 className="pageTitle">Главная страница</h1>
                 <MainSlider />
                 <div className="mainPage__feedback feedback">
-                    <div className="feedback__title">Отзывы</div>
                     <div className="feedback__body">
                         {feedback.map(item => (
                             <FeedbackItem

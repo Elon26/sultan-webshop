@@ -20,12 +20,14 @@
 .feedbackItem {
     flex: 1 1 calc(20% - 20px);
     font-size: 16px;
-    border: 4px solid #000000;
+    border: 4px solid #060101;
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
-    background-color: #bffffd;
+    background: linear-gradient(135deg, rgb(96, 96, 96), rgb(197, 197, 197));
+
     border-radius: 12px;
     height: 300px;
     overflow: hidden;
+    color: #1f1f1f;
 
     @media (max-width: $md1) {
         flex: 1 1 calc(25% - 20px);
@@ -55,7 +57,7 @@
     }
 
     &__date {
-        color: #6c6c6c;
+        color: #232323;
         margin-bottom: 10px;
     }
 

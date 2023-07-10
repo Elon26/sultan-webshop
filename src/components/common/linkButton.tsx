@@ -10,6 +10,7 @@ interface LinkButtonProps {
     title?: string;
     handleClick?(): void;
     testid?: string;
+    absolute?: boolean;
 }
 
 /** Компонент кнопки со ссылкой. */
@@ -20,19 +21,31 @@ const LinkButton = ({
     icon,
     title,
     handleClick,
-    testid
+    testid,
+    absolute
 }: LinkButtonProps): React.ReactElement => {
     return (
-        <Link
-            to={link}
-            className={classEl + " button"}
-            title={title}
-            onClick={handleClick}
-            data-testid={testid}
-        >
-            <span>{text}</span>
-            {icon}
-        </Link>
+        <>
+            {!absolute && <Link
+                to={link}
+                className={classEl + " button"}
+                title={title}
+                onClick={handleClick}
+                data-testid={testid}
+            >
+                <span>{text}</span>
+                {icon}
+            </Link>}
+            {absolute && <a
+                href={link}
+                className={classEl + " button"}
+                target="blank"
+                data-testid={testid}
+            >
+                <span>{text}</span>
+                {icon}
+            </a>}
+        </>
     );
 };
 

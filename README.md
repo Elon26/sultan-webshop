@@ -1,117 +1,62 @@
-# Sultan — Online Store
+# Sultan — Online Store (E-Commerce Web App)
 
-A modern e-commerce web application for browsing household goods, managing a shopping cart, and administering the product catalog.
+A feature-rich e-commerce web application built for browsing household goods, multi-level product filtering, cart management, and full catalog administration.
 
-## Overview
+---
 
-Sultan is a full-featured online store that provides product browsing, filtering, cart management, and an admin interface for managing the catalog.  
-The application is designed with a responsive layout and focuses on predictable state management and data persistence.
+## 🏗️ Architecture & Engineering Approach
 
-## Tech Stack
+- **Component-Driven SPA:** Built with React 18 and React Router DOM, focusing on clean separation of concerns and modular component structure.
+- **State & Data Synchronization:** Centralized global state management via Redux Toolkit, synchronized bidirectionally with persistent storage (Firebase Firestore & LocalStorage).
+- **Quality Assurance:** Covered with unit and integration tests using Jest and React Testing Library.
+- **Type Safety:** Strongly typed with TypeScript across components, hooks, and state slices.
 
-- React  
-- TypeScript  
-- Redux  
-- Firebase  
-- Jest  
-- React Testing Library  
+---
 
-## Pages
+## 🧰 Tech Stack
 
-- Home  
-- Catalog  
-- Product Details  
-- Cart  
-- Admin Panel  
+- **Core:** React 18, TypeScript
+- **Routing:** React Router DOM (v5)
+- **State Management:** Redux Toolkit, React Redux
+- **Backend & Database:** Firebase (Firestore persistence, database backup/restore features)
+- **Styling:** SASS / SCSS
+- **Testing:** Jest, React Testing Library, ts-jest
+- **UI & Libraries:** Swiper, React Star Ratings, React Toastify, React Icons
+- **Tooling:** Axios, Lodash, ESLint, Prettier, gh-pages
 
-## Data Model & State Management
+---
 
-- The application operates on two core entities:
-  - `catalog` — product list  
-  - `cart` — user-selected items  
+## ✨ Key Features & Highlights
 
-- Persistent storage:
-  - Product catalog is stored in Firebase  
-  - Cart state is persisted in LocalStorage  
+- **Advanced Catalog & Multi-Level Filtering:** Dynamic filtering by product purpose, price ranges, and manufacturer brands, featuring internal text search and input validation.
+- **Cart & Persistence Engine:** Real-time cart synchronization, quantity adjustments, and state persistence via LocalStorage.
+- **Comprehensive Admin Panel (`/admin`):** Full CRUD operations for products, input validation, real-time Firebase sync, and a database restore feature (clearing data and seeding from a JSON backup).
+- **Robust UX Elements:** Promotional sliders (`Swiper`), customer reviews, instant toast notifications, and custom 404 routing.
 
-- In-session state:
-  - Both entities are stored in Redux to provide global access across the application  
-  - Any change to catalog or cart is synchronized between Redux and persistent storage  
+---
 
-## General UI & UX
+## 👨‍💻 Engineering Contributions
 
-- Fully responsive layout aligned with the design system  
-- 404 page for unknown routes  
-- Global loading states and spinners for async operations  
-- Toast notifications for all meaningful user actions  
-- Header displays:
-  - Total number of items in the cart  
-  - Total cart price  
-- All core functions are documented using JSDoc  
+- Designed and implemented the complete application architecture and state-sync lifecycle between Redux, LocalStorage, and Firebase.
+- Developed complex multi-level filtering and sorting algorithms for the product catalog.
+- Built a secure administrative dashboard with CRUD operations and database snapshot restoration.
+- Wrote unit and integration test suites using Jest and React Testing Library to ensure core logic reliability.
 
-## Home Page
+---
 
-- Promotional slider with current offers  
-- Customer reviews section  
+## 🚀 Local Setup
 
-## Catalog
+Clone the repository and install dependencies to run the project locally:
 
-- Displays all products fetched from the database  
-- Product cards link to individual product pages  
-- Sorting:
-  - By name (ascending / descending)  
-  - By price (ascending / descending)  
+```bash
+# Clone the repository
+git clone https://github.com/Elon26/sultan-webshop.git
 
-- Filtering:
-  - Primary filter by product purpose (e.g. dishwashing, fruit washing, etc.)  
-  - Secondary filters by price range and manufacturer  
-  - Two-level filtering is supported (e.g. filter by purpose first, then refine by price and brand)  
-  - Filter options are dynamically generated based on available products  
-  - Manufacturer list is dynamically updated based on selected purpose  
-  - Manufacturer filter includes internal text search  
-  - Price filter includes input validation to prevent invalid ranges  
+# Install dependencies
+npm install
 
-- Cart interactions:
-  - "Add to Cart" adds one unit of the product  
-  - After adding, the button transforms into a shortcut link to the cart  
+# Run tests
+npm test
 
-## Product Page
-
-- Displays full product details fetched from the database  
-- Quantity selector for adding multiple items to the cart  
-- "Add to Cart" adds the selected quantity  
-- After adding, the button transforms into a shortcut link to the cart  
-
-## Cart
-
-- Displays all selected products and total price  
-- Users can:
-  - Change item quantities  
-  - Remove items from the cart  
-- All cart updates are persisted in LocalStorage and reflected globally  
-- Checkout action:
-  - Shows a confirmation modal  
-  - Clears the cart state  
-
-## Admin Panel
-
-- Admin panel route: `/admin`  
-- Provides full CRUD operations for products  
-- Supports restoring the database to the default state:
-  - Clears all existing products from Firebase  
-  - Restores catalog from a predefined JSON backup  
-- Product creation and editing include validation to prevent invalid input  
-- All admin actions are immediately synchronized with Firebase  
-
-## Testing
-
-- Core functionality is covered with unit and integration tests  
-- Test suite is implemented with Jest and React Testing Library  
-
-## Local Setup
-
-1. Clone the repository  
-2. Install dependencies  
-3. Configure Firebase credentials  
-4. Start the development server  
-
+# Run the development server
+npm start
